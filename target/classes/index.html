@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Add</h2>
+    <form action="http://localhost:7000/add-post" method="post" target="add-result">
+        <input type="number" id="add1-input" name="add1" style="-moz-appearance: textfield;">
+        <span>+</span>
+        <input type="number" id="add2-input" name="add2" style="-moz-appearance: textfield;">
+        <button id="add-btn">Add</button>
+    </form>
+    <iframe name="add-result"></iframe>
+    <h2>Subtract</h2>
+    <form action="http://localhost:7000/sub-post" method="post" target="sub-result">
+        <input type="number" name="sub1" id="sub1-input">
+        <span>-</span>
+        <input type="number" name="sub2" id="sub2-input">
+        <button id="sub-btn">Subtract</button>
+    </form>
+    <iframe name="sub-result"></iframe>
+    <h2>Multiply</h2>
+    <form action="http://localhost:7000/mult-post" method="post" target="mult-result">
+        <input type="number" name="mult1" id="mult1-input">
+        <span>*</span>
+        <input type="number" name="mult2" id="mult2-input">
+        <button id="mult-btn">Multiply</button>
+    </form>
+    <iframe name="mult-result"></iframe>
+    <h2>Divide</h2>
+    <form action="http://localhost:7000/div-post" method="post" target="div-result">
+        <input type="number" name="div1" id="div1-input">
+        <span>/</span>
+        <input type="number" name="div2" id="div2-input">
+        <button id="div-btn">Divide</button>
+    </form>
+    <iframe name="div-result"></iframe>
+</body>
+</html>
