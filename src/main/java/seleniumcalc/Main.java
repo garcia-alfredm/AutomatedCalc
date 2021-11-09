@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
@@ -26,7 +28,10 @@ public class Main {
         btn.click();
         Thread.sleep(3000);
 
-        //driver.switchTo().frame("add-result");
+        //switches to add iframe
+        driver.switchTo().frame("add-result");
+        System.out.println("Addition value: " + driver.findElement(By.tagName("pre")).getText());
+        driver.switchTo().defaultContent();
 
         //try subtraction
         inputElem1 = driver.findElement(By.id("sub1-input"));
@@ -41,6 +46,11 @@ public class Main {
         btn.click();
         Thread.sleep(3000);
 
+        //switches to add iframe
+        driver.switchTo().frame("sub-result");
+        System.out.println("Subtraction value: " + driver.findElement(By.tagName("pre")).getText());
+        driver.switchTo().defaultContent();
+
         //try multiplication
         inputElem1 = driver.findElement(By.id("mult1-input"));
         inputElem2 = driver.findElement(By.id("mult2-input"));
@@ -54,6 +64,11 @@ public class Main {
         btn.click();
         Thread.sleep(3000);
 
+        //switches to add iframe
+        driver.switchTo().frame("mult-result");
+        System.out.println("Multipy value: " + driver.findElement(By.tagName("pre")).getText());
+        driver.switchTo().defaultContent();
+
         //try division
         inputElem1 = driver.findElement(By.id("div1-input"));
         inputElem2 = driver.findElement(By.id("div2-input"));
@@ -66,6 +81,11 @@ public class Main {
         btn = driver.findElement(By.id("div-btn"));
         btn.click();
         Thread.sleep(3000);
+
+        //switches to add iframe
+        driver.switchTo().frame("div-result");
+        System.out.println("Divide value: " + driver.findElement(By.tagName("pre")).getText());
+        driver.switchTo().defaultContent();
 
         driver.quit();
     }
